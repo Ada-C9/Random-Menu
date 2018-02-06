@@ -9,7 +9,7 @@ item = ["lamb chops", "pork shank", "ribs", "kale", "chicken", "turnips", "beets
 puts "Hello, how many menu options would you like to have today?"
 
 answer = 0
-  until answer <= 10 && answer > 0
+until answer <= 10 && answer > 0
   print "Please choose a number from 1 to 10: "
   answer = gets.chomp.to_i
   puts ""
