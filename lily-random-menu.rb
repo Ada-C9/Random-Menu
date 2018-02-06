@@ -16,15 +16,13 @@ until answer <= 10 && answer > 0
 end
 
 # must have 10 or fewer items; if parameters are satisfied output options
-if answer <= 10 && answer > 0
-  puts "Fantastic! Here is your menu:"
-  tally = answer.to_i + 1
-  i = 1
-  until i == tally
+puts "Fantastic! Here is your menu:"
+tally = answer.to_i + 1
+i = 1
+until i == tally
 
 #delete contents from arrays as they are used so there are no duplicates in output
-  puts "#{i}. #{adjective.delete(adjective.sample)}, #{style.delete(style.sample)} #{item.delete(item.sample)}"
+puts "#{i}. #{adjective.delete(adjective.sample)}, #{style.delete(style.sample)} #{item.delete(item.sample)}"
   i += 1
-  end
-  puts ""
 end
+  puts ""
