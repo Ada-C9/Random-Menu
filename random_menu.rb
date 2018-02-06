@@ -76,19 +76,15 @@ if answer == "NO"
   menu_length = gets.chomp.to_i
 
   puts "\nHere is your one of a kind #{menu_length} item menu:"
-  # loop over arrays, print random menu items
-  menu_length.times do |item|
-  # Assign random variables
-    adjective = adjectives.sample
-    method = methods.sample
-    food = foods.sample
-  # Output random menu
-    puts "#{item + 1}. #{adjective} #{method} #{food}"
-  # Removie items from arrays
-    adjectives.delete(adjective)
-    methods.delete(method)
-    foods.delete(food)
-  end
+   # loop over each array item to create unique menu
+    menu_length.times do |item|
+    # Assign and remove in single step
+      adjective = adjectives.delete_at(rand(adjectives.length))
+      method = methods.delete_at(rand(methods.length))
+      food = foods.delete_at(rand(foods.length))
+    # Output random menu
+      puts "#{item + 1}. #{adjective} #{method} #{food}"
+    end
 else
   # accept user inputs for menu
   puts "How many items would you like to put on your menu?"
@@ -111,21 +107,6 @@ else
     print "Enter a type of food:\t"
     foods[item] = gets.chomp
   end
-
-# puts "\nHere is your one of a kind #{menu_length} item menu:"
-#  # loop over each array item to create unique menu
-#   menu_length.times do |item|
-#   # Assign random variables
-#     # adjective = adjectives.sample
-#     # method = methods.sample
-#     # food = foods.sample
-#   # Output random menu
-#     puts "#{item + 1}. #{adjective} #{method} #{food}"
-#   # Removie items from arrays
-#     # adjectives.delete(adjective)
-#     # methods.delete(method)
-#     # foods.delete(food)
-#   end
 
   puts "\nHere is your one of a kind #{menu_length} item menu:"
    # loop over each array item to create unique menu
