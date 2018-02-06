@@ -12,17 +12,20 @@ answer = 0
 until answer <= 10 && answer > 0
   print "Please choose a number from 1 to 10: "
   answer = gets.chomp.to_i
-  puts ""
 end
 
-# must have 10 or fewer items; if parameters are satisfied output options
+# once parameters are satisfied, output options
+puts ""
 puts "Fantastic! Here is your menu:"
-tally = answer.to_i + 1
-i = 1
-until i == tally
 
-#delete contents from arrays as they are used so there are no duplicates in output
-puts "#{i}. #{adjective.delete(adjective.sample)}, #{style.delete(style.sample)} #{item.delete(item.sample)}"
+# add 1 to answer value because until loop will only run up to and not including answer value.
+i = 1
+until i == answer + 1
+
+# delete contents from arrays as they are used so there are no duplicates in output
+  puts "#{i}. #{adjective.delete(adjective.sample)}, #{style.delete(style.sample)} #{item.delete(item.sample)}"
   i += 1
 end
-  puts ""
+
+# stylized to have an extra space at the end
+puts ""
