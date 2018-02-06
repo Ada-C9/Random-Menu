@@ -1,9 +1,5 @@
 # Program to print the random Menu
 
-#adjectives = [ "hot","sour","crunchy","smooth","spicy","sweet","salty","creamy","dry","soft"]
-#cooking_styles = ["fried","baked","steamed","smoked","sauted","charboiled","mexican","chinese","thai","cooked"]
-#foods = ["cake","dumplings","tacos","beans","burrito","pizza","clam","pasta","rice","noodles"]
-
 # To print a user generated random menu
 # Array for storing adjectives
 adjectives_array = Array.new
