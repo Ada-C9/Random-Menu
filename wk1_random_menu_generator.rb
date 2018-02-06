@@ -4,8 +4,8 @@ arr1 = ["Creamy", "Spicy", "Mild", "Succulent", "Dairy-free", "Sweet and sour", 
 arr2 = ["steamed", "grilled", "marinated", "BBQ-ed", "candied", "par-boiled", "poached", "baked", "vegan", "seared"]
 arr3 = ["casserole", "sandwich", "quiche", "tacos", "salmon", "tofu", "brussel sprouts", "cheesecake", "ribs", "tabbouleh"]
 
-print "How many of the 10 menu items would you like to view? "
-  num = gets.chomp
+#print "How many of the 10 menu items would you like to view? "
+#  num = gets.chomp
 
 10.times do |i|
   puts "#{i+1}. #{arr1.sample} #{arr2.sample} #{arr3.sample}"
