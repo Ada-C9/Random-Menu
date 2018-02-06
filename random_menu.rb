@@ -1,13 +1,34 @@
-method_array = ["deep fried", "roasted", "sauted", "slow cooked", "smoked", "steamed", "teriyaki", "boiled", "microwaved", "baked"]
-taste_array = ["sweet", "sour", "salty", "hot", "creamy", "bitter", "umami", "buttery", "juicy", "yummy"]
-food_array = ["chicken", "beef", "cheeze", "apple", "salad", "broccoli", "fish", "burrito", "steak", "tofu"]
+method_array = []
+taste_array = []
+food_array = []
 message_array = []
 number_of_item = 11
 
-puts "How many items do you want to check out? Pick a number between 0 and 10."
+def create_arrays(array)
+  item = gets.chomp.downcase
+  until item == "quit"
+    array << item
+    puts "Please enter another item:"
+    item = gets.chomp.downcase
+  end
+end
+
+
+puts "Welcome to Random Menu! Let's create your own food database now."
+puts "Please enter some cooking methods. Enter 'quit' when you are done."
+create_arrays(method_array)
+puts "Please enter some descriptors for food. Enter 'quit' when you are done."
+create_arrays(taste_array)
+puts "Please enter some of your favorite food. Enter 'quit' when you are done."
+create_arrays(food_array)
+
+array_sizes = [method_array.size, taste_array.size, food_array.size]
+max_number_of_item = array_sizes.min
+
+puts "How many items do you want to check out? Pick a number between 0 and #{max_number_of_item}."
 number_of_item = gets.chomp.to_i
-while number_of_item > food_array.size
-  puts "Please enter again."
+while number_of_item > max_number_of_item
+  puts "Please enter a number between 0 and #{max_number_of_item}."
   number_of_item = gets.chomp.to_i
 end
 
