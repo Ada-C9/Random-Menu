@@ -14,16 +14,16 @@ item_number = 1
 def item_amount_confirm (array, items)
   if array.length < items
     puts "You have not input enough items."
-    puts "Please add at least #{items - (array.length)} more."
+    puts "Please add at least #{items - (array.length)} more.\n"
     add_more = gets.chomp.split(", ")
     add_more.each {|descriptor| array.push(descriptor)}
     if array.length < items
-      puts "You have entered too few items again. The program will exit."
+      puts "\nYou have entered too few items again. The program will exit.\n"
       exit
     end
   else
-    puts "So you have added more descriptors than the number of items you wanted on your menu."
-    puts "This is not a problem. Be aware that not all descriptives will be on the Menu."
+    puts "So you have added more descriptors than the number of items you wanted on your menu.\n"
+    puts "This is not a problem. Be aware that not all descriptives will be on the Menu.\n"
   end
 end
 
@@ -40,20 +40,20 @@ def description (pre_made, items)
     foods = %W[duck grapeleaf romano-cheese salmon green-pepper fig toast crab squab ginger]
     menu_descriptors = [describe, cook_style, foods]
   elsif pre_made != "y" && pre_made != "Y"
-    puts "Enter food descriptors ie hot, cold, spiced."
-    puts "Please separate each item by a comma and space."
+    puts "\nEnter food descriptors ie hot, cold, spiced."
+    puts "Please separate each item by a comma and space.\n"
     describe = gets.chomp.split(", ")
     if (describe.length) != items
       item_amount_confirm(describe, items)
     end
-    puts "Enter methods of cooking ie fried, steamed, poached."
-    puts "Please separate each item by a comma and space."
+    puts "\nEnter methods of cooking ie fried, steamed, poached."
+    puts "Please separate each item by a comma and space.\n"
     cook_style = gets.chomp.split(", ")
     if (cook_style.length) != items
       item_amount_confirm(cook_style, items)
     end
-    puts "Enter food types ie salad, brownie, chicken."
-    puts "Please separate each item by a comma and space."
+    puts "\nEnter food types ie salad, brownie, chicken."
+    puts "Please separate each item by a comma and space.\n"
     foods = gets.chomp.split(", ")
     if (foods.length) != items
       item_amount_confirm(foods, items)
@@ -78,13 +78,13 @@ border
 puts "Welcome to the Random Menu Generator! \n"
 
 # Prompts user to enter number of menu items
-puts "How many items would you like to print on your Menu?"
+puts "\nHow many items would you like to print on your Menu?"
 puts "Please enter a numerical integer between 1 and 10.\n"
 items = gets.chomp.to_i
 
-puts "Would you like to use our premade Menu descriptors?"
+puts "\nWould you like to use our premade Menu descriptors?"
 puts "Please enter y to use the premade Menu descriptors."
-puts "Enter anything to choose your own."
+puts "Enter anything to choose your own.\n"
 pre_made_response = gets.chomp
 
 # Array of arrays of menu descriptors.
@@ -99,7 +99,7 @@ foods = menu_descriptors[2]
 # Allows user to enter menu items again if the number is not in the desired range
 if items < 1 || items > foods.length
   puts "\n#{items} is not a numerical value between 1 and 10."
-  puts "Please enter how many items you desire on the Menu again."
+  puts "Please enter how many items you desire on the Menu again.\n"
   items_2 = gets.chomp.to_i
   items = items_2
 end
@@ -114,7 +114,7 @@ if items >= 1 && items <= foods.length
     item_number += 1
   end
 else
-  puts "#{items} is still not a numerical value between 1 and 10."
+  puts "\n#{items} is still not a numerical value between 1 and 10."
   puts "The program will now exit."
   exit
 end
