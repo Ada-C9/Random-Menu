@@ -63,7 +63,7 @@ end
 puts "Now we're going to enter some foods."
 
 5.times do
-  print "Please enter an adjective (ex: potatoes): "
+  print "Please enter an food (ex: potatoes): "
   food = gets.chomp.downcase.to_s
   foods << food
 end
