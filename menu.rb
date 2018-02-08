@@ -24,7 +24,7 @@ no_of_items.times do
   foods_array.push(foods)
 end
 
-menucount = no_of_items - 1
+menu_index = no_of_items - 1
 print "How many items do you want to see in menu :  "
 items_to_display = gets.chomp.to_i
 # To check whether user-chosen number of items is not larger than the number of items we have in  arrays.
@@ -32,11 +32,11 @@ if items_to_display  < no_of_items
 
 # To select the menu items randomly
   no_of_items.times do |i|
-    adj_rand = rand(0..menucount)
-    cook_rand = rand(0..menucount)
-    foods_rand = rand(0..menucount)
+    adj_rand = rand(0..menu_index)
+    cook_rand = rand(0..menu_index)
+    foods_rand = rand(0..menu_index)
     print " #{i+1}. #{adjectives_array[adj_rand]} #{ cookingstyle_array[cook_rand]} #{foods_array[foods_rand]}\n "
-    menucount = menucount-1
+    menu_index = menu_index-1
     # To ensure that no descriptive term in a menu item is ever repeated
     adjectives_array.delete_at(adj_rand)
     cookingstyle_array.delete_at(cook_rand)
